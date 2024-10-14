@@ -1,0 +1,27 @@
+<%-include("partials/header")-%>
+
+<h1>Contact</h1>
+<p><%= cContent %></p>
+
+<button onclick="logout()">Logout</button>
+
+<script>
+    async function logout() {
+      const response = await fetch('/logout', {
+        method: 'POST'
+      });
+      if (response.redirected) {
+        // Use location.replace to prevent going back
+        location.replace(response.url); // Redirect to the home page
+      }
+    }
+    window.addEventListener('pageshow', (event) => {
+      var isNavigation = event.persisted ||
+        (typeof window.performance != 'undefined' && window.performance.navigation.type === 2);
+      if (isNavigation) {
+        window.location.reload();
+      }
+    });
+  </script>
+
+<%-include("partials/footer")-%>

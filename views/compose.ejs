@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+
+<div class="compose-container">
+    <h1>Compose</h1>
+    <form action="/compose" method="post">
+        <div class="form-group">
+            <label for="postTitle">Title</label>
+            <input type="text" name="postTitle" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="postBody">Post</label>
+            <textarea name="postBody" id="" cols="30" rows="5" class="form-control" style="height: 275px;" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-bottom: 5px;">Publish</button>
+    </form>
+    <script>
+        window.addEventListener('pageshow', (event) => {
+           var isNavigation = event.persisted ||
+             (typeof window.performance != 'undefined' && window.performance.navigation.type === 2);
+           if (isNavigation) {
+             window.location.reload();
+           }
+         });
+  
+
+   </script>
+</div>
+
+<%- include("partials/footer") -%>

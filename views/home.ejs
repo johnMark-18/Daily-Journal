@@ -1,0 +1,31 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<p>
+    <%= hContent %>
+</p>
+
+<div class="row">
+    <% postsejs.forEach(function(i) { %>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title"><%= i.title %></h5>
+                    <p><%=i.content.substring(0,20)+" ..."%>  <a href="/home/<%=i._id%>">Read more</a> </p>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<script>
+    window.addEventListener('pageshow', (event) => {
+        var isNavigation = event.persisted ||
+            (typeof window.performance != 'undefined' && window.performance.navigation.type === 2);
+        if (isNavigation) {
+            window.location.reload();
+        }
+    });
+</script>
+
+<%- include("partials/footer") -%>

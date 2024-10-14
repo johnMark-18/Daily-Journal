@@ -1,0 +1,118 @@
+/* Ensure the body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Ensure the container takes at least the full viewport height */
+.container-fluid {
+    padding-top: 20px; /* Reduced padding at the top */
+    padding-bottom: 60px; /* Padding at the bottom */
+    min-height: 100vh; /* Full viewport height */
+    position: relative; /* For positioning children inside */
+}
+
+/* Form container positioned at a fixed location */
+.form-container {
+    position: absolute; /* Change to absolute positioning */
+    top: 50%; /* Vertically center the container */
+    left: 50%; /* Horizontally center the container */
+    transform: translate(-50%, -50%); /* Use transform to perfectly center */
+    
+    width: 400px; /* Fixed width */
+    padding: 20px; /* Padding for layout */
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Footer container with sticky positioning */
+.footer {
+    position: sticky; /* Sticky position */
+    bottom: 0; /* Stick it to the bottom */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Full width of the viewport */
+    height: 60px; /* Fixed height */
+    background-color: #1abc9c; /* Background color */
+    text-align: center; /* Center the text */
+    padding-top: 3px;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.footer p {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Sticky navbar at the top */
+.navbar {
+    position: sticky; /* Sticky position */
+    top: 0; /* Stick it to the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top */
+    background-color: #f8f8f8; /* Light background for the navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 5px 0; /* Padding for spacing */
+}
+
+/* Adjust container for content */
+.container {
+    margin-top: 15px; /* Adjust margin-top to match the sticky navbar */
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-size: 20px; /* Slightly reduce font size for the brand */
+    font-weight: bold; /* Make the brand name bold */
+    color: #080808; /* Dark text color */
+    padding: 5px 15px; /* Reduce padding */
+}
+
+/* Navbar link styles with reduced height */
+.navbar-nav li a {
+    color: #080808; /* Darker color for navbar links */
+    font-size: 16px; /* Font size */
+    padding: 10px 15px; /* Reduced padding for smaller height */
+}
+
+/* Navbar link hover effect */
+.navbar-nav li a:hover {
+    background-color: #e7e7e7; /* Light hover effect */
+    color: #1abc9c; /* Change text color on hover */
+}
+
+/* Active link style */
+.navbar-nav li.active a {
+    background-color: #1abc9c; /* Highlight active link */
+    color: #fff; /* White text for active link */
+}
+
+
+.card {
+    border: 1px solid #585858; /* Light border for the card */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.2s; /* Smooth scale on hover */
+    padding-left: 10px;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slightly enlarge the card on hover */
+}
+
+.card-title {
+    font-size: 2rem; /* Increase the title font size */
+    font-weight: bold; /* Bold title */
+}
+
+.card-text {
+    font-size: 1rem; /* Adjust content font size */
+}
+
+/* Ensure proper spacing for the card */
+.mb-4 {
+    margin-bottom: 1.5rem; /* Space between cards */
+}
